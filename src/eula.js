@@ -10,7 +10,7 @@ module.exports = () => {
         .includes('eula=true')
     ) {
       console.error("Server cannot start as you haven't agreed to the EULA");
-      process.exit(1);
+      
     }
   } else {
     fs.writeFileSync(
@@ -18,6 +18,6 @@ module.exports = () => {
       '# By changing this value to true you agree to the Minecraft EULA @ https://account.mojang.com/documents/minecraft_eula.\neula=true\n'
     );
     console.error('Please agree to the Minecraft EULA in eula.txt');
-    process.exit(1);
+    
   }
 };
